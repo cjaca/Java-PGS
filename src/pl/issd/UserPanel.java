@@ -71,9 +71,12 @@ public class UserPanel {
         Double money = in.nextDouble();
         if (money == 0.0){
             System.out.println("Your balance is still the same, anyway, do you need something else?\n");
-        }else{
+        }else if (money > 0){
             currentUser.PayIn(money);
             System.out.println("Your current balance is now: "+currentUser.ChceckAccountBalance()+"\n");
+        }else if (money < 0){
+            System.out.println("You cannot pay in negative money lol.");
+
         }
     }
 
@@ -86,9 +89,11 @@ public class UserPanel {
         if (currentBalance - money < 0){
             System.out.println("Oh sh*t man! Are you trying to rob us?! We don't give loans to critters like you!");
             System.out.println("Anyway, nice try fella... \n");
-        } else{
+        } else if (money > 0){
             currentUser.PayOut(money);
             System.out.println("\n Here you are! Don't spend it on girls and stupid things! \n Your current balance is: "+currentUser.ChceckAccountBalance());
+        }else if (money < 0){
+            System.out.println("Nice try hacker XD");
         }
         System.out.println("\n Do you need anything else?");
     }

@@ -1,0 +1,6 @@
+package pl.issd;
+public class Main {
+    public static void main(String[] args) {
+           Menu.Start();
+    }
+}

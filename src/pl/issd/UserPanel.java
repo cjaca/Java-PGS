@@ -100,7 +100,17 @@ public class UserPanel {
     }
 
     private void ChangePassword(){
-
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter current password: ");
+        String currentPassword = in.nextLine();
+        if (currentUser.ComparePassword(currentPassword)){
+            System.out.println("Please enter new password: ");
+            String newPassword = in.nextLine();
+            currentUser.ChangePassword(newPassword);
+            System.out.println("Password changed succesfully.");
+        }else {
+            System.out.println("Password does not match, please try again later...");
+        }
     }
 
     private void Logout(){

@@ -54,9 +54,9 @@ public class User {
         return 0;
     }
 
-    public int ChangePassword(String oldPassword, String newPassword){
+    public int ChangePassword(String newPassword){
 
-        //Change Password method declaration
+        this.password = newPassword;
 
         return 0;
     }
